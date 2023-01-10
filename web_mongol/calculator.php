@@ -50,7 +50,7 @@
 <?php
     if(isset($_POST['numbers'])){
         $code = $_POST['numbers'];
-        if(preg_match('/(`|open|exec|system|shell_exec|pcntl_exec|eval|assert|\$|\)/i', $code)){      
+        if(preg_match('/^(open|exec|system|shell_exec|pcntl_exec|eval|assert)$/i', $code)){     
             echo "HACKER!";
             echo "<script>window.location.href='error_chingis.php';</script>";
             die();
